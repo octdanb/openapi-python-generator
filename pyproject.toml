@@ -16,7 +16,7 @@ package-mode = true
 Changelog = "https://github.com/MarcoMuellner/openapi-python-generator/releases"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12"
+python = ">=3.8,<3.13"
 httpx = "*"
 pydantic = ">=1.10.1"
 orjson = "^3.7.2"
