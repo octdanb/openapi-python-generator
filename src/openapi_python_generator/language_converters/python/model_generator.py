@@ -68,7 +68,7 @@ def generate_models(
     for schema_name, schema_or_reference in components.schemas.items():
         name = common.normalize_symbol(schema_name)
         name = pascalcase(name)
-        if schema_or_reference.enum is not None:
+        if hasattr(schema_or_reference, 'enum') and schema_or_reference.enum is not None:
             value_dict = schema_or_reference.dict()
             regex = re.compile(r"[\s\/=\*\+]+")
             value_dict["enum"] = [
