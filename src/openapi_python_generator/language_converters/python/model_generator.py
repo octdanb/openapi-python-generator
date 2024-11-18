@@ -94,7 +94,7 @@ def generate_models(
         properties = []
         property_iterator = (
             schema_or_reference.properties.items()
-            if schema_or_reference.properties is not None
+            if hasattr(schema_or_reference, 'properties') and schema_or_reference.properties is not None
             else {}
         )
         for prop_name, property in property_iterator:
@@ -175,7 +175,7 @@ def generate_models(
             properties = []
             property_iterator = (
                 media_type.media_type_schema.properties.items()
-                if media_type.media_type_schema.properties is not None
+                if hasattr(media_type.media_type_schema, 'properties') and media_type.media_type_schema.properties is not None
                 else {}
             )
             for prop_name, property in property_iterator:
@@ -230,7 +230,7 @@ def generate_models(
             properties = []
             property_iterator = (
                 media_type.media_type_schema.properties.items()
-                if media_type.media_type_schema.properties is not None
+                if hasattr(media_type.media_type_schema, 'properties') and media_type.media_type_schema.properties is not None
                 else {}
             )
             for prop_name, property in property_iterator:
@@ -292,7 +292,7 @@ def generate_models(
                 properties = []
                 property_iterator = (
                     media_type.media_type_schema.properties.items()
-                    if media_type.media_type_schema.properties is not None
+                    if hasattr(media_type.media_type_schema, 'properties') and media_type.media_type_schema.properties is not None
                     else {}
                 )
                 for prop_name, property in property_iterator:
